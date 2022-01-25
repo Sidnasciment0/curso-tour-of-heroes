@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-@Component({
+@Component({ // Decorator
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

@@ -1,0 +1,29 @@
+<!--
+  Os Bindings em Angular são as formas de como a View interage com Model/(Compoment).
+  Interpolation ou interpolação em português é o tipo mais comum de Binding,
+  ele é utilizado para transportar o valor de propriedades e retorno de métodos do componente para o template HTML.
+  Na interplação utilizadmos o nome da propriedade ou método dentro de duas chaves "{{}}", em inglês curly brackets.
+-->
+
+<!--
+  Pipe: Serve para mudar algum dado de apresentação, como string; formatar data; dado monetário e muito mais.
+  Usamos a barra pipeline '|' para o pipe.
+  Usando o uppercase, colocamos o nome do herói todo em maiúsculo. Facilitando mudança de dados para ser apresentado, de forma simples.
+-->
+<h2>{{hero.name | uppercase}} Details</h2>
+
+<!--Trazendo as propriedades 'id' e 'name' por interpolação-->
+<div><span>id: </span>{{ hero.id }}</div>
+<div><span>name: </span>{{ hero.name }}</div>
+
+<!--Edição do herói-->
+<div>
+  <label for="name">Hero name:</label>
+  <!--
+    To Way Data Binding: Se mudarmos do template alguma informação, essa informação vai refletir no nosso component.
+    E se mudarmos algo no nosso component, irá refletir no template (Alteração de via dupla).
+    Usamos [(ngModel)] (Diretiva), e para usar, temos que importar o módulo para aplicação,
+    no caso, um módulo próprio do Angular: FormsModule (em app-module.ts em imports), assim poder usar o [(ngModel)] em qualquer lugar.
+  -->
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" type="text">
+</div>
